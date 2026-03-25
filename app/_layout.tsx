@@ -26,22 +26,22 @@ const App = () => {
   }
 
   return (
-    <Stack>
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="login" />
+      <Stack.Screen name="register" />
       <Stack.Screen
         name="index"
-        options={
-          {
-            title: 'Mis Notas',
-          }
-        }
+        options={{
+          headerShown: true,
+          title: 'Mis Notas',
+        }}
       />
       <Stack.Screen
         name='create-note'
-        options={
-          {
-            title: 'Crear nueva nota'
-          }
-        }
+        options={{
+          headerShown: true,
+          title: 'Crear nueva nota'
+        }}
       />
     </Stack>
   );

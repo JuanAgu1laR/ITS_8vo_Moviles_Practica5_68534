@@ -6,6 +6,7 @@ export interface Note {
   titulo: string;
   descripcion: string;
   completada: boolean;
+  fechaRecordatorio?: string;
 }
 
 export default function useNotes() {
@@ -37,7 +38,8 @@ export default function useNotes() {
       const newTarea = await api.createTarea({
         titulo: note.titulo,
         descripcion: note.descripcion,
-        completada: false
+        completada: false,
+        fechaRecordatorio: note.fechaRecordatorio
       });
       
       const newNote = {
@@ -61,7 +63,8 @@ export default function useNotes() {
       const updatedTarea = await api.updateTarea(id, {
         titulo: note.titulo,
         descripcion: note.descripcion,
-        completada: note.completada
+        completada: note.completada,
+        fechaRecordatorio: note.fechaRecordatorio
       });
       
       const updatedNote = {
